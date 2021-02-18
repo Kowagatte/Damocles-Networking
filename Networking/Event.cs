@@ -1,7 +1,7 @@
 ﻿using LiteNetLib;
 using LiteNetLib.Utils;
 
-namespace Damocles.Events {
+namespace Networking {
     public interface Event {
         
         /// <summary>

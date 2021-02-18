@@ -1,4 +1,4 @@
-﻿namespace Damocles.Events {
+﻿namespace Networking {
     
     [System.AttributeUsage(System.AttributeTargets.Struct)]
     public class NetworkEvent : System.Attribute {

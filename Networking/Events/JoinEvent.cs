@@ -1,9 +1,7 @@
 ﻿using System;
 using LiteNetLib;
 using LiteNetLib.Utils;
-using UnityEngine;
-
-namespace Damocles.Events {
+namespace Networking.Events {
     
     [NetworkEvent(NetworkEvents.JOIN)]
     public struct JoinEvent : Event {
@@ -24,8 +22,6 @@ namespace Damocles.Events {
             JoinMessage = reader.GetString();
         }
 
-        public void Invoke() {
-            Debug.Log(JoinMessage);
-        }
+        public void Invoke() { }
     }
 }

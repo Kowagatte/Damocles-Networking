@@ -1,4 +1,4 @@
-﻿namespace Damocles.Events {
+﻿namespace Networking {
     
     public enum NetworkEvents : byte {
         JOIN = 0
