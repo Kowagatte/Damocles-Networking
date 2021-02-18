@@ -16,10 +16,6 @@ namespace Networking {
         /// </summary>
         /// <param name="reader"></param>
         void ReadPacket(NetPacketReader reader);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        void Invoke();
+        
     }
 }

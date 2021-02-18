@@ -1,6 +1,7 @@
 ﻿namespace Networking {
     
     public enum NetworkEvents : byte {
-        JOIN = 0
+        PlayerInput = 0,
+        GameObjectMove = 1
     }
 }
