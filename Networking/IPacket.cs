@@ -2,7 +2,7 @@
 using LiteNetLib.Utils;
 
 namespace Networking {
-    public interface Event {
+    public interface IPacket {
         
         /// <summary>
         /// Writes the packet to the given NetDataWriter
@@ -16,6 +16,11 @@ namespace Networking {
         /// </summary>
         /// <param name="reader"></param>
         void ReadPacket(NetPacketReader reader);
-        
+
+        /// <summary>
+        /// Calls Command corresponding to the Packet.
+        /// </summary>
+        void Invoke();
+
     }
 }

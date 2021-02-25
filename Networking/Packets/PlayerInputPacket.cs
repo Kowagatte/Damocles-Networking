@@ -1,15 +1,16 @@
-﻿using LiteNetLib;
+﻿using Damocles.Networking.Commands;
+using LiteNetLib;
 using LiteNetLib.Utils;
 
-namespace Networking.Events {
+namespace Networking.Packets {
     
-    [NetworkEvent(NetworkEvents.PlayerInput)]
-    public struct PlayerInputEvent : Event {
+    [PacketAttribute(NamedPackets.PlayerInput)]
+    public struct PlayerInputPacket : IPacket {
+        
+        public PlayerInputs _input;
+        public float _pitch, _yaw;
 
-        private PlayerInputs _input;
-        private float _pitch, _yaw;
-
-        public PlayerInputEvent(PlayerInputs input, float pitch, float yaw) {
+        public PlayerInputPacket(PlayerInputs input, float pitch, float yaw) {
             _input = input;
             _pitch = pitch;
             _yaw = yaw;
@@ -27,6 +28,9 @@ namespace Networking.Events {
             _pitch = reader.GetFloat();
             _yaw = reader.GetFloat();
         }
-        
+
+        public void Invoke() {
+            new PlayerInputCommand().Execute(this);
+        }
     }
 }
